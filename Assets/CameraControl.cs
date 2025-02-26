@@ -3,7 +3,7 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour
 {
     public Transform target;  // El objeto alrededor del cual rotará la cámara
-    public float distance = 10f;  // Distancia inicial de la cámara desde el objeto
+    public float distance = 8f;  // Distancia inicial de la cámara desde el objeto
     public float height = 5f;  // Altura inicial de la cámara
     public float rotationSpeed = 5f;  // Velocidad de rotación
 
@@ -37,7 +37,7 @@ public class CameraControl : MonoBehaviour
         }
 
         // Limitar la rotación vertical (evitar que la cámara se voltee)
-        currentRotationY = Mathf.Clamp(currentRotationY, -80f, 80f);
+        currentRotationY = Mathf.Clamp(currentRotationY, -10f, 40f);
 
         // Calcular la nueva posición de la cámara
         Quaternion rotation = Quaternion.Euler(currentRotationY, currentRotationX, 0);
